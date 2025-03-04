@@ -1,0 +1,78 @@
+@use "design-system" as ds;
+
+.product-preview-card {
+    background-color: ds.$white;
+    width: 350px;
+    border-radius: 8px;
+    margin-top: ds.$spacing-200;
+    margin-bottom: ds.$spacing-200;
+
+    .image {
+        display: block;
+        width: 100%;
+        height: auto;
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+    }
+
+    .content {
+        display: flex;
+        flex-direction: column;
+        gap: ds.$spacing-300;
+        padding: ds.$spacing-400;
+    }
+
+    .category {
+        @include ds.text-preset-4;
+        color: ds.$grey;
+        text-transform: uppercase;
+    }
+
+    .name {
+        @include ds.text-preset-1;
+        color: ds.$black;
+    }
+
+    .description {
+        @include ds.text-preset-3;
+        color: ds.$grey;
+    }
+
+    .price {
+        display: flex;
+        flex-direction: row;
+        gap: ds.$spacing-200;
+        align-items: center;
+    }
+
+    .sale-price {
+        @include ds.text-preset-1;
+        color: ds.$green-500;
+    }
+
+    .regular-price {
+        @include ds.text-preset-5;
+        color: ds.$grey;
+        text-decoration: line-through;
+    }
+
+    .add-to-cart-button {
+        background-color: ds.$green-500;
+        display: flex;
+        flex-direction: row;
+        gap: ds.$spacing-100;
+        justify-content: center;
+        align-items: center;
+        
+        padding-left: ds.$spacing-400;
+        padding-right: ds.$spacing-400;
+        padding-top: ds.$spacing-200;
+        padding-bottom: ds.$spacing-200;
+
+        border: 0;
+        border-radius: 8px;
+
+        @include ds.text-preset-2;
+        color: ds.$white;
+    }
+}

@@ -1,0 +1,76 @@
+// Colors
+
+$black: hsl(212, 21%, 14%);
+$grey: hsl(228, 12%, 48%);
+$cream: hsl(30, 38%, 92%);
+$white: hsl(0, 0%, 100%);
+$green-500: hsl(158, 36%, 37%);
+$green-700: hsl(158, 42%, 18%);
+
+// Spacing (would rem be better?)
+
+$spacing-500: 40px;
+$spacing-400: 32px;
+$spacing-300: 24px;
+$spacing-200: 16px;
+$spacing-100: 8px;
+$spacing-50: 4px;
+
+// Typography
+
+@mixin fraunces-bold {
+    font-family: "Fraunces", serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+}
+
+@mixin montserrat-bold {
+    font-family: "Montserrat", serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+}
+
+@mixin montserrat-medium {
+    font-family: "Montserrat", serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+}
+
+@mixin text-preset-1 {
+    @include fraunces-bold;
+    font-size: 2rem; // 32px;
+    line-height: 100%;
+    letter-spacing: 0px;
+}
+
+@mixin text-preset-2 {
+    @include montserrat-bold;
+    font-size: 0.875rem; // 14px;
+    line-height: 110%;
+    letter-spacing: 0px;
+}
+
+@mixin text-preset-3 {
+    @include montserrat-medium;
+    font-size: 0.875rem; // 14px;
+    line-height: 160%;
+    letter-spacing: 0px;
+}
+
+@mixin text-preset-4 {
+    @include montserrat-medium;
+    font-size: 0.75rem; // 12px;
+    line-height: 120%;
+    letter-spacing: 5px; // rem???
+}
+
+@mixin text-preset-5 {
+    @include montserrat-medium;
+    font-size: 0.8125rem; // 13px;
+    line-height: 120%;
+    letter-spacing: 0px;
+}
+
