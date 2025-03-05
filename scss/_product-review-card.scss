@@ -1,78 +1,122 @@
-@use "design-system" as ds;
+@use "presets";
 
 .product-preview-card {
-    background-color: ds.$white;
-    width: 350px;
-    border-radius: 8px;
-    margin-top: ds.$spacing-200;
-    margin-bottom: ds.$spacing-200;
+    background-color: presets.$white;
+    width: min(21.875rem, 100%); //350px;
+    border-radius: 0.5rem; // 8px;
+    margin-block-start: presets.$spacing-200;
+    margin-block-end: presets.$spacing-200;
 
     .image {
         display: block;
         width: 100%;
         height: auto;
-        border-top-left-radius: 8px;
-        border-top-right-radius: 8px;
+
+        img {
+            width: 100%;
+            height: auto;
+            border-start-start-radius: 0.5rem; // 8px;
+            border-start-end-radius: 0.5rem; // 8px;
+        }
     }
 
     .content {
         display: flex;
         flex-direction: column;
-        gap: ds.$spacing-300;
-        padding: ds.$spacing-400;
+        gap: presets.$spacing-300;
+        padding: presets.$spacing-400;
+        width: 100%;
     }
 
     .category {
-        @include ds.text-preset-4;
-        color: ds.$grey;
+        @include presets.text-preset-4;
+        color: presets.$grey;
         text-transform: uppercase;
     }
 
     .name {
-        @include ds.text-preset-1;
-        color: ds.$black;
+        @include presets.text-preset-1;
+        color: presets.$black;
     }
 
     .description {
-        @include ds.text-preset-3;
-        color: ds.$grey;
+        @include presets.text-preset-3;
+        color: presets.$grey;
     }
 
     .price {
         display: flex;
         flex-direction: row;
-        gap: ds.$spacing-200;
+        flex-wrap: wrap;
+        gap: presets.$spacing-200;
         align-items: center;
     }
 
     .sale-price {
-        @include ds.text-preset-1;
-        color: ds.$green-500;
+        @include presets.text-preset-1;
+        color: presets.$green-500;
     }
 
     .regular-price {
-        @include ds.text-preset-5;
-        color: ds.$grey;
+        @include presets.text-preset-5;
+        color: presets.$grey;
         text-decoration: line-through;
     }
 
     .add-to-cart-button {
-        background-color: ds.$green-500;
+        background-color: presets.$green-500;
         display: flex;
         flex-direction: row;
-        gap: ds.$spacing-100;
+        gap: presets.$spacing-100;
         justify-content: center;
         align-items: center;
+        transition: all 300ms;
         
-        padding-left: ds.$spacing-400;
-        padding-right: ds.$spacing-400;
-        padding-top: ds.$spacing-200;
-        padding-bottom: ds.$spacing-200;
+        padding-inline: presets.$spacing-400;
+        padding-block: presets.$spacing-200;
 
         border: 0;
-        border-radius: 8px;
+        border-radius: 0.5rem; // 8px;
 
-        @include ds.text-preset-2;
-        color: ds.$white;
+        @include presets.text-preset-2;
+        color: presets.$white;
+
+        &:hover {
+            background-color: presets.$green-700;
+            cursor: pointer;
+        }
+
+        img {
+            width: auto;
+            height: 1rem;
+        }
+    }
+}
+
+@media (min-width: presets.$desktop-width) {
+    .product-preview-card {
+        display: flex;
+        flex-direction: row;
+        width: min(37.5rem, 100%); //600px;
+
+        .image {
+            flex-grow: 0;
+            flex-shrink: 0;
+            flex-basis: 50%;
+
+            img {
+                height: 100%;
+                border-start-start-radius: 0.5rem; // 8px;
+                border-end-start-radius: 0.5rem; // 8px;
+                border-start-end-radius: 0;
+            }
+        }
+
+        .content {
+            flex-grow: 0;
+            flex-shrink: 0;
+            flex-basis: 50%;
+            gap: presets.$spacing-400;
+        }
     }
 }

@@ -1,22 +1,27 @@
 .product-preview-card {
   background-color: hsl(0, 0%, 100%);
-  width: 350px;
-  border-radius: 8px;
-  margin-top: 16px;
-  margin-bottom: 16px;
+  width: min(21.875rem, 100%);
+  border-radius: 0.5rem;
+  margin-block-start: 1rem;
+  margin-block-end: 1rem;
 }
 .product-preview-card .image {
   display: block;
   width: 100%;
   height: auto;
-  border-top-left-radius: 8px;
-  border-top-right-radius: 8px;
+}
+.product-preview-card .image img {
+  width: 100%;
+  height: auto;
+  border-start-start-radius: 0.5rem;
+  border-start-end-radius: 0.5rem;
 }
 .product-preview-card .content {
   display: flex;
   flex-direction: column;
-  gap: 24px;
-  padding: 32px;
+  gap: 1.5rem;
+  padding: 2rem;
+  width: 100%;
 }
 .product-preview-card .category {
   font-family: "Montserrat", serif;
@@ -25,7 +30,7 @@
   font-style: normal;
   font-size: 0.75rem;
   line-height: 120%;
-  letter-spacing: 5px;
+  letter-spacing: 0.3125rem;
   color: hsl(228, 12%, 48%);
   text-transform: uppercase;
 }
@@ -52,7 +57,8 @@
 .product-preview-card .price {
   display: flex;
   flex-direction: row;
-  gap: 16px;
+  flex-wrap: wrap;
+  gap: 1rem;
   align-items: center;
 }
 .product-preview-card .sale-price {
@@ -80,15 +86,14 @@
   background-color: hsl(158, 36%, 37%);
   display: flex;
   flex-direction: row;
-  gap: 8px;
+  gap: 0.5rem;
   justify-content: center;
   align-items: center;
-  padding-left: 32px;
-  padding-right: 32px;
-  padding-top: 16px;
-  padding-bottom: 16px;
+  transition: all 300ms;
+  padding-inline: 2rem;
+  padding-block: 1rem;
   border: 0;
-  border-radius: 8px;
+  border-radius: 0.5rem;
   font-family: "Montserrat", serif;
   font-optical-sizing: auto;
   font-weight: 700;
@@ -98,7 +103,39 @@
   letter-spacing: 0px;
   color: hsl(0, 0%, 100%);
 }
+.product-preview-card .add-to-cart-button:hover {
+  background-color: hsl(158, 42%, 18%);
+  cursor: pointer;
+}
+.product-preview-card .add-to-cart-button img {
+  width: auto;
+  height: 1rem;
+}
 
+@media (min-width: 48rem) {
+  .product-preview-card {
+    display: flex;
+    flex-direction: row;
+    width: min(37.5rem, 100%);
+  }
+  .product-preview-card .image {
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: 50%;
+  }
+  .product-preview-card .image img {
+    height: 100%;
+    border-start-start-radius: 0.5rem;
+    border-end-start-radius: 0.5rem;
+    border-start-end-radius: 0;
+  }
+  .product-preview-card .content {
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: 50%;
+    gap: 2rem;
+  }
+}
 * {
   margin: 0;
   padding: 0;
@@ -136,7 +173,7 @@ footer {
   font-size: 0.875rem;
   line-height: 160%;
   letter-spacing: 0px;
-  font-size: 11px;
+  font-size: 0.6875rem;
   text-align: center;
 }
 footer a {

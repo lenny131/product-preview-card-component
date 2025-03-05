@@ -1,4 +1,4 @@
-@use "design-system" as ds;
+@use "presets";
 @use "product-review-card";
 
 * {
@@ -12,7 +12,7 @@ html {
 }
 
 body {
-    background-color: ds.$cream;
+    background-color: presets.$cream;
     height: 100%;
 }
 
@@ -31,8 +31,8 @@ main {
 }
 
 footer {
-    @include ds.text-preset-3;
-    font-size: 11px;
+    @include presets.text-preset-3;
+    font-size: 0.6875rem; //11px;
     text-align: center;
 
     a {
